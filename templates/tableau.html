@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}{{ page_title }} · EV Atlas{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="eyebrow">EV MARKET INTELLIGENCE</div><h1>{{ page_title }}</h1><p>Explore the published analysis of vehicle categories, manufacturers, batteries and driving range.</p>{% if embed_url %}<a class="btn primary" href="{{ embed_url }}" target="_blank" rel="noopener noreferrer">Open directly on Tableau Public ↗</a>{% endif %}</section>
+<section class="embed-wrap">{% if embed_url %}<iframe title="{{ page_title }}" src="{{ embed_url }}" allowfullscreen loading="lazy"></iframe><p class="embed-note">If the visualization does not appear, use the direct Tableau Public link above.</p>{% else %}<div class="setup-card"><h2>Story link not supplied</h2><p>The dashboard is available now. A separate Story can be linked after it has been published.</p><a class="btn primary" href="/dashboard">Open dashboard ↗</a></div>{% endif %}</section>
+{% endblock %}
